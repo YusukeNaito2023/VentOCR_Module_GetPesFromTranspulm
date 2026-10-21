@@ -1,0 +1,74 @@
+{
+  "module_key": "get_pes_from_transpulm",
+  "display_name": "Pes の推定（経肺圧から）",
+  "version": "0.1.0",
+  "module_api": 1,
+  "ventocr_min": "0.7.0",
+  "developer": "VentOCR Developer Team",
+  "description": "Estimates esophageal pressure from Hamilton's transpulmonary pressure: Pes_est = Paw − Ptranspulm (Ptranspulm taken align_points rows earlier), and per-breath Pes max/min, ΔPes, Ptrans I/E. Validated against Hamilton's own breath values (Study Recorder). Research use only.",
+  "engines": [
+    "hamilton_ventocr"
+  ],
+  "requires": {
+    "waves": [
+      "Pressure",
+      "Ptranspulm"
+    ]
+  },
+  "outputs": {
+    "waves": [
+      {
+        "name": "Pes_est",
+        "label": "Pes（推定）",
+        "unit": "cmH2O",
+        "color": "#8c564b",
+        "style": "dash",
+        "default_shown": false,
+        "zero_line": true
+      }
+    ],
+    "breath_values": [
+      {
+        "name": "Pes_max",
+        "label": "Pes max（推定）",
+        "unit": "cmH2O",
+        "format": "{:.1f}"
+      },
+      {
+        "name": "Pes_min",
+        "label": "Pes min（推定）",
+        "unit": "cmH2O",
+        "format": "{:.1f}"
+      },
+      {
+        "name": "dPes",
+        "label": "ΔPes（推定）",
+        "unit": "cmH2O",
+        "format": "{:.1f}"
+      },
+      {
+        "name": "Ptrans_I",
+        "label": "Ptranspulm 吸気終末",
+        "unit": "cmH2O",
+        "format": "{:.1f}"
+      },
+      {
+        "name": "Ptrans_E",
+        "label": "Ptranspulm 呼気終末",
+        "unit": "cmH2O",
+        "format": "{:.1f}"
+      },
+      {
+        "name": "dPtrans",
+        "label": "ΔPtranspulm（動的）",
+        "unit": "cmH2O",
+        "format": "{:.1f}"
+      },
+      {
+        "name": "skip_reason",
+        "label": "計算しなかった理由",
+        "summary": false
+      }
+    ]
+  }
+}

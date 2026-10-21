@@ -1,0 +1,7 @@
+{
+  "align_points": 1,
+  "end_insp_window_sec": 0.1,
+  "end_insp_search_sec": 3.0,
+  "min_points": 10,
+  "max_missing_frac": 0.1
+}
