@@ -1,11 +1,15 @@
 {
   "module_key": "get_pes_from_transpulm",
   "display_name": "Pes の推定（経肺圧から）",
-  "version": "0.1.0",
+  "display_name_ja": "Pes の推定（経肺圧から）",
+  "display_name_en": "Pes estimate (from Ptranspulm)",
+  "version": "0.1.1",
   "module_api": 1,
   "ventocr_min": "0.7.0",
   "developer": "VentOCR Developer Team",
   "description": "Estimates esophageal pressure from Hamilton's transpulmonary pressure: Pes_est = Paw − Ptranspulm (Ptranspulm taken align_points rows earlier), and per-breath Pes max/min, ΔPes, Ptrans I/E. Validated against Hamilton's own breath values (Study Recorder). Research use only.",
+  "description_ja": "Hamilton の画面から読んだ経肺圧（Ptranspulm）と気道内圧（Paw）から食道内圧を推定する（Pes_est = Paw − 1 点前の Ptranspulm）。呼吸ごとに Pes の最大・最小・振れ、吸気終末・呼気終末の経肺圧を出す。Hamilton 自身の呼吸ごとの値（Study Recorder）と比べて検証済み。研究用。",
+  "description_en": "Estimates esophageal pressure from Hamilton's transpulmonary pressure: Pes_est = Paw − Ptranspulm (Ptranspulm taken align_points rows earlier), and per-breath Pes max/min, ΔPes, Ptrans I/E. Validated against Hamilton's own breath values (Study Recorder). Research use only.",
   "engines": [
     "hamilton_ventocr"
   ],
@@ -15,6 +19,9 @@
       "Ptranspulm"
     ]
   },
+  "requires_hint": "Hamilton エンジン 0.2.0 以上で、設定「4段目の波形は Ptranspulm（経肺圧）」（post_ocr.ptranspulm）をオンにして解析し直してください。4段目が Pes の解析には使えません。",
+  "requires_hint_ja": "Hamilton エンジン 0.2.0 以上で、設定「4段目の波形は Ptranspulm（経肺圧）」（post_ocr.ptranspulm）をオンにして解析し直してください。4段目が Pes の解析には使えません。",
+  "requires_hint_en": "Re-analyze with the Hamilton engine 0.2.0 or later with the option \"4th waveform is Ptranspulm\" (post_ocr.ptranspulm) turned on. Analyses whose 4th waveform is Pes cannot be used.",
   "outputs": {
     "waves": [
       {

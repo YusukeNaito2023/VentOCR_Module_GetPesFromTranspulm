@@ -13,7 +13,7 @@ Ptranspulm の波形から、Pes_est = Paw − Ptranspulm と、呼吸ごとの 
 import numpy as np
 import pandas as pd
 
-MODULE_VERSION = "0.1.0"
+MODULE_VERSION = "0.1.1"
 
 try:  # アプリ（VentOCR 0.7.0〜）の例外。無ければ同じ名前で定義する（アプリは名前で判別する）
     from ventocr_core.modules import NotApplicable

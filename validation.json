@@ -1,0 +1,67 @@
+{
+ "reported": true,
+ "module_version": "0.1.0",
+ "date": "2026-10-21",
+ "reporter": "VentOCR Developer Team (hamilton)",
+ "reference": "Hamilton C6 の呼吸ごとの値（日本光電 Study Recorder で記録した MonitorParameters）。表示の更新の時刻と VTE で呼吸を 1 対 1 に対応づけ、記録の値は「次の呼吸の始まりで出る記録 = その呼吸の値」",
+ "engine": "hamilton_ventocr 0.8.3（= 0.1.0。4 段目の列を Ptranspulm として読み替え）",
+ "videos": 1,
+ "breaths": 1202,
+ "modes": [
+  "PCV+",
+  "SPONT"
+ ],
+ "comment": "Ptranspulm 2026-10-09 10-25-03.mov（1 時間、1920x1080）。Abnormal・Clipped・Fragment・空欄 1 割超の呼吸を除く。分解能は画面の 1 点（約 0.14 cmH2O）。0.1.1 は manifest の表示の文を足しただけで、計算は 0.1.0 と同じ",
+ "values": {
+  "Pes_max": {
+   "unit": "cmH2O",
+   "metric": "bias / MAE / ±1 cmH2O 以内",
+   "result": "+0.13 / 0.43 / 93%",
+   "n": 1202,
+   "comment": "記録の Pes max"
+  },
+  "Pes_min": {
+   "unit": "cmH2O",
+   "metric": "bias / MAE / ±1 cmH2O 以内",
+   "result": "−0.60 / 0.81 / 78%",
+   "n": 1110,
+   "comment": "記録の Pes min（記録に値のある呼吸）"
+  },
+  "dPes": {
+   "unit": "cmH2O",
+   "metric": "bias / MAE / ±1 cmH2O 以内",
+   "result": "+0.71 / 1.01 / 72%",
+   "n": 1110,
+   "comment": "記録の Pes max − Pes min"
+  },
+  "Ptrans_I": {
+   "unit": "cmH2O",
+   "metric": "bias / MAE / ±1 cmH2O 以内",
+   "result": "−0.41 / 0.45 / 90%",
+   "n": 1201,
+   "comment": "記録の Ptrans I"
+  },
+  "Ptrans_E": {
+   "unit": "cmH2O",
+   "metric": "bias / MAE / ±1 cmH2O 以内",
+   "result": "−0.58 / 0.67 / 83%",
+   "n": 1202,
+   "comment": "記録の Ptrans E"
+  },
+  "dPtrans": {
+   "unit": "cmH2O",
+   "metric": null,
+   "result": null,
+   "n": null,
+   "comment": "記録に対応する値なし"
+  }
+ },
+ "waveforms": {
+  "Pes_est": {
+   "metric": null,
+   "result": null,
+   "n": null,
+   "comment": "波形どうしの比較はまだ（Study Recorder の高頻度の波形で今後）。呼吸ごとの最大・最小は Pes_max・Pes_min で評価"
+  }
+ }
+}
